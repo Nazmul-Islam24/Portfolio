@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Compatibility patch for sandboxed iframe environments / tools that reassign window.fetch
+      (function() {
+        try {
+          var currentFetch = window.fetch;
+          try {
+            Object.defineProperty(window, 'fetch', {
+              get: function() { return currentFetch; },
+              set: function(fn) { currentFetch = fn; },
+              configurable: true,
+              enumerable: true
+            });
+          } catch (_) {}
+
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            try {
+              Object.defineProperty(Window.prototype, 'fetch', {
+                get: function() { return currentFetch; },
+                set: function(fn) { currentFetch = fn; },
+                configurable: true,
+                enumerable: true
+              });
+            } catch (_) {}
+          }
+        } catch (_) {}
+
+        window.addEventListener('error', function(event) {
+          if (event && event.message && event.message.indexOf('fetch') !== -1 && event.message.indexOf('getter') !== -1) {
+            event.preventDefault();
+          }
+        });
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./src/assets/images/Me.avif" />
+    <title>Nazmul | Frontend Developer & Web Consultant</title>
+    <meta name="description" content="I build websites that help businesses turn online attention into real opportunities. Modern frontend development and conversion-focused web design." />
+    <meta property="og:title" content="Nazmul | Frontend Developer & Web Consultant" />
+    <meta property="og:description" content="I build digital experiences that help businesses grow. Modern frontend development and conversion-focused web design." />
+    <meta property="og:image" content="./src/assets/images/Me.avif" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#F5F3EF] text-[#171717] antialiased selection:bg-[#B88A5A]/20 selection:text-[#171717]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
