@@ -73,7 +73,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         ) : (
           <div>
             <div className="mb-6">
-              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#B88A5A] block mb-1">
+              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#E5A855] block mb-1">
                 Direct Engagement
               </span>
               <h3 className="text-2xl font-bold text-white tracking-tight">
@@ -95,7 +95,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-3.5 py-2.5 text-xs bg-[#1F1F1F] border border-white/10 rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-[#B88A5A]"
+                  className="w-full px-3.5 py-2.5 text-xs bg-[#1F1F1F] border border-white/10 rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-[#E5A855]"
                 />
               </div>
 
@@ -109,7 +109,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   placeholder="your@email.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-3.5 py-2.5 text-xs bg-[#1F1F1F] border border-white/10 rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-[#B88A5A]"
+                  className="w-full px-3.5 py-2.5 text-xs bg-[#1F1F1F] border border-white/10 rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-[#E5A855]"
                 />
               </div>
 
@@ -120,7 +120,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 <select
                   value={formData.projectType}
                   onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                  className="w-full px-3.5 py-2.5 text-xs bg-[#1F1F1F] border border-white/10 rounded-lg text-white focus:outline-none focus:ring-1 focus:ring-[#B88A5A]"
+                  className="w-full px-3.5 py-2.5 text-xs bg-[#1F1F1F] border border-white/10 rounded-lg text-white focus:outline-none focus:ring-1 focus:ring-[#E5A855]"
                 >
                   <option>New Business Website</option>
                   <option>Website Redesign & Modernization</option>
@@ -139,7 +139,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   placeholder="What is your website trying to accomplish?"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-3.5 py-2.5 text-xs bg-[#1F1F1F] border border-white/10 rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-[#B88A5A] resize-none"
+                  className="w-full px-3.5 py-2.5 text-xs bg-[#1F1F1F] border border-white/10 rounded-lg text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-[#E5A855] resize-none"
                 />
               </div>
 
@@ -156,7 +156,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
             <div className="mt-4 pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-neutral-400">
               <span className="flex items-center gap-1.5">
-                <Mail className="w-3.5 h-3.5 text-[#B88A5A]" />
+                <Mail className="w-3.5 h-3.5 text-[#E5A855]" />
                 <span>nzlpatwary901@gmail.com</span>
               </span>
               <span>Available for global projects</span>

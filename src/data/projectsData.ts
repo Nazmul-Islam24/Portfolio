@@ -110,8 +110,63 @@ export const PROJECTS: ProjectCaseStudy[] = [
     }
   },
   {
-    id: 'law-firm',
+    id: 'beauty-salon',
     number: '02',
+    industry: 'BEAUTY & HAIR SALON',
+    name: 'Beauty Salon',
+    tagline: 'A visual-first experience designed around discovery, artistic trust and appointment booking.',
+    oneLineProblem: 'Discerning clients seek salon services based on visual mastery and stylist artistry, but most salon sites are clunky and lack aesthetic finesse.',
+    focus: ['Editorial Lookbook', 'Stylist Portfolio Showcase', 'Instant Chair Reservation', 'Brand Atmosphere'],
+    businessGoalTags: ['VISUAL DISCOVERY', 'BOOKING', 'BRAND'],
+    image: salonPreview,
+    themeStyle: 'salon',
+    status: 'active', // ACTIVE: currently visible on portfolio
+    liveUrl: 'https://beauty-hair-salon-topaz.vercel.app/', // PASTE YOUR LIVE SALON SITE URL HERE (e.g. 'https://your-salon-site.vercel.app')
+    challenge: 'A luxury salon cannot convert high-ticket appointments with generic booking software widgets. The website itself must reflect haute couture elegance.',
+    goals: [
+      'Showcase stylist artistry and hair transformations with an editorial magazine aesthetic',
+      'Provide clear, tiered service descriptions (Balayage, Sculpting, Botanical Rituals)',
+      'Drive friction-free appointment reservations on mobile devices'
+    ],
+    approachSteps: [
+      { number: '01', title: 'Discovery', description: 'Observed client behavior on Instagram vs booking platforms to bridge the visual-to-booking gap.' },
+      { number: '02', title: 'Information Architecture', description: 'Organized services by desired look and stylist tier to avoid pricing ambiguity.' },
+      { number: '03', title: 'UX Direction', description: 'Created an interactive visual lookbook with click-to-book stylist pairing.' },
+      { number: '04', title: 'Visual Design', description: 'Applied warm travertine neutrals, graceful serifs, and high-fashion whitespace.' },
+      { number: '05', title: 'Frontend Development', description: 'Implemented lightweight smooth image carousels and micro-transitions.' },
+      { number: '06', title: 'Responsive Optimization', description: 'Fine-tuned touch gestures and instant date selection for mobile users on the go.' }
+    ],
+    businessDecisions: [
+      {
+        title: 'Editorial Visual Hierarchy',
+        rationale: 'Visitors book with their eyes. High-definition work samples are presented before service price sheets.'
+      },
+      {
+        title: 'Stylist-Matched Booking Flow',
+        rationale: 'Clients book the artisan, not just a service. Highlighting stylist bios dramatically lifts repeat bookings.'
+      },
+      {
+        title: 'Transparent Timing & Package Inclusions',
+        rationale: 'Detailed appointment duration and complimentary rituals so clients feel pampered before arrival.'
+      }
+    ],
+    technologies: ['React', 'Next-Gen Responsive Grid', 'Tailwind CSS', 'Motion Effects'],
+    liveFeatures: {
+      headline: 'Bespoke Hair Artistry & Botanical Wellness',
+      subheadline: 'Crafting effortless silhouettes, custom color palettes, and restorative scalp therapy in an architectural sanctuary.',
+      actionLabel: 'Reserve Your Appointment',
+      secondaryAction: 'Browse The Lookbook',
+      highlights: ['Master Colorist Specialists', 'Organic Clean-Air Formulations', 'Private Styling Suites'],
+      sampleStats: [
+        { label: 'Client Satisfaction', value: '99.2%' },
+        { label: 'Booking Conversion', value: '3.4x' },
+        { label: 'Instagram Community', value: '42K' }
+      ]
+    }
+  },
+  {
+    id: 'law-firm',
+    number: '03',
     industry: 'CORPORATE LAW FIRM',
     name: 'Apex & Partners Legal Counsel',
     tagline: 'A high-authority digital experience designed to communicate expertise, credibility and make consultation seamless.',
@@ -161,61 +216,6 @@ export const PROJECTS: ProjectCaseStudy[] = [
         { label: 'Litigation Success', value: '94%' },
         { label: 'Years of Precedence', value: '25+' },
         { label: 'Corporate Clients', value: '180+' }
-      ]
-    }
-  },
-  {
-    id: 'beauty-salon',
-    number: '03',
-    industry: 'BEAUTY & HAIR SALON',
-    name: 'Lume Beauty Hair Salon',
-    tagline: 'A visual-first experience designed around discovery, artistic trust and appointment booking.',
-    oneLineProblem: 'Discerning clients seek salon services based on visual mastery and stylist artistry, but most salon sites are clunky and lack aesthetic finesse.',
-    focus: ['Editorial Lookbook', 'Stylist Portfolio Showcase', 'Instant Chair Reservation', 'Brand Atmosphere'],
-    businessGoalTags: ['VISUAL DISCOVERY', 'BOOKING', 'BRAND'],
-    image: salonPreview,
-    themeStyle: 'salon',
-    status: 'active', // ACTIVE: currently visible on portfolio
-    liveUrl: 'https://beauty-hair-salon-topaz.vercel.app/', // PASTE YOUR LIVE SALON SITE URL HERE (e.g. 'https://your-salon-site.vercel.app')
-    challenge: 'A luxury salon cannot convert high-ticket appointments with generic booking software widgets. The website itself must reflect haute couture elegance.',
-    goals: [
-      'Showcase stylist artistry and hair transformations with an editorial magazine aesthetic',
-      'Provide clear, tiered service descriptions (Balayage, Sculpting, Botanical Rituals)',
-      'Drive friction-free appointment reservations on mobile devices'
-    ],
-    approachSteps: [
-      { number: '01', title: 'Discovery', description: 'Observed client behavior on Instagram vs booking platforms to bridge the visual-to-booking gap.' },
-      { number: '02', title: 'Information Architecture', description: 'Organized services by desired look and stylist tier to avoid pricing ambiguity.' },
-      { number: '03', title: 'UX Direction', description: 'Created an interactive visual lookbook with click-to-book stylist pairing.' },
-      { number: '04', title: 'Visual Design', description: 'Applied warm travertine neutrals, graceful serifs, and high-fashion whitespace.' },
-      { number: '05', title: 'Frontend Development', description: 'Implemented lightweight smooth image carousels and micro-transitions.' },
-      { number: '06', title: 'Responsive Optimization', description: 'Fine-tuned touch gestures and instant date selection for mobile users on the go.' }
-    ],
-    businessDecisions: [
-      {
-        title: 'Editorial Visual Hierarchy',
-        rationale: 'Visitors book with their eyes. High-definition work samples are presented before service price sheets.'
-      },
-      {
-        title: 'Stylist-Matched Booking Flow',
-        rationale: 'Clients book the artisan, not just a service. Highlighting stylist bios dramatically lifts repeat bookings.'
-      },
-      {
-        title: 'Transparent Timing & Package Inclusions',
-        rationale: 'Detailed appointment duration and complimentary rituals so clients feel pampered before arrival.'
-      }
-    ],
-    technologies: ['React', 'Next-Gen Responsive Grid', 'Tailwind CSS', 'Motion Effects'],
-    liveFeatures: {
-      headline: 'Bespoke Hair Artistry & Botanical Wellness',
-      subheadline: 'Crafting effortless silhouettes, custom color palettes, and restorative scalp therapy in an architectural sanctuary.',
-      actionLabel: 'Reserve Your Appointment',
-      secondaryAction: 'Browse The Lookbook',
-      highlights: ['Master Colorist Specialists', 'Organic Clean-Air Formulations', 'Private Styling Suites'],
-      sampleStats: [
-        { label: 'Client Satisfaction', value: '99.2%' },
-        { label: 'Booking Conversion', value: '3.4x' },
-        { label: 'Instagram Community', value: '42K' }
       ]
     }
   },

@@ -1,5 +1,6 @@
-import { ArrowRight, ArrowUpRight, Sparkles } from 'lucide-react';
-import nazmul from '../assets/images/nazmul.avif'
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import nazImage from '../assets/images/naz.png';
+import HeroThreeAnimation from './HeroThreeAnimation';
 
 interface HeroSectionProps {
   onOpenContact: () => void;
@@ -15,116 +16,199 @@ export default function HeroSection({ onOpenContact }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-      {/* Background subtle noise / ambient glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#B88A5A]/5 rounded-full blur-3xl pointer-events-none" />
+    <section
+      id="hero"
+      className="relative pt-8 pb-10 sm:pt-16 sm:pb-14 lg:pt-24 lg:pb-18 overflow-hidden min-h-[90vh] flex flex-col justify-center bg-[#0A0C10]"
+      aria-label="Nazmul Patwary - Frontend Developer & Web Consultant"
+    >
+      {/* 24/7 Dynamic 3D Three.js Background Animation */}
+      <HeroThreeAnimation />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Value-First Headline & Positioning */}
-          <div className="lg:col-span-7 flex flex-col items-start z-10">
-            {/* Position Kicker */}
-            <div className="inline-flex items-center gap-2 mb-6 text-xs uppercase tracking-widest font-semibold text-[#B88A5A]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#B88A5A]" />
-              <span>Frontend Developer / Web Consultant</span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 w-full relative z-10">
+
+        {/* =========================================================================
+            MOBILE & TABLET VIEW (< lg):
+            Image on TOP (centered, 2X larger, lifted higher up), with kicker attached,
+            followed by an airy gap down to the headline, action buttons & 3 points
+            ========================================================================= */}
+        <div className="flex flex-col items-center text-center lg:hidden w-full max-w-2xl mx-auto">
+          
+          {/* Top Portrait Container (Centered, 2X larger, lifted higher up with safe left/right margins) */}
+          <div className="relative w-full flex flex-col items-center justify-end pt-0 pb-0">
+            {/* Ambient golden glow scaled with image */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 sm:w-80 h-64 sm:h-80 bg-[#E5A855]/15 rounded-full blur-3xl pointer-events-none" />
+
+            {/* Cutout Image with bottom dark gradient blend (2X larger presence with clean side gaps) */}
+            <div className="relative w-[86vw] xs:w-[82vw] sm:w-[380px] max-w-[420px] mx-auto select-none">
+              <img
+                src={nazImage}
+                alt="Nazmul Patwary - Frontend Developer and Web Consultant"
+                className="w-full h-auto object-contain drop-shadow-[0_16px_36px_rgba(0,0,0,0.7)]"
+                loading="eager"
+                fetchPriority="high"
+              />
+              
+              {/* Gradient mask blending the bottom of the arms/torso into the background */}
+              <div className="absolute inset-x-0 bottom-0 h-20 sm:h-24 bg-gradient-to-t from-[#0A0C10] via-[#0A0C10]/85 to-transparent pointer-events-none" />
             </div>
 
-            {/* Massive Heading with balanced wrapping */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#171717] tracking-tight leading-[1.08] mb-6 text-balance">
-              I Build Digital Experiences <br className="hidden sm:block" />
-              That Help Businesses Grow.
+            {/* Position Kicker Badge: attached with the image, sized up to match the 2X image */}
+            <div className="relative z-20 mt-[-10px] sm:mt-[-14px]">
+              <div className="inline-flex items-center gap-2 text-xs sm:text-sm uppercase tracking-wider font-semibold text-[#E5A855] bg-white/[0.06] backdrop-blur-md px-4 py-1.5 rounded-full border border-white/15 shadow-lg">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E5A855]" />
+                <span>Frontend Developer & Consultant</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Text Content: Clear deliberate gap after kicker, flows smoothly downwards */}
+          <div className="flex flex-col items-center text-center w-full px-2 mt-7 xs:mt-8 sm:mt-9 relative z-20">
+
+            {/* Main Headline with Custom Radiant Gradient */}
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.14] mb-3 sm:mb-4 text-balance max-w-xl">
+              <span className="bg-gradient-to-r from-white via-amber-100 to-[#E5A855] bg-clip-text text-transparent">
+                I Build Digital Experiences That Help Businesses Grow.
+              </span>
             </h1>
 
-            {/* Clear Value-Driven Narrative */}
-            <p className="text-base sm:text-lg text-[#6B6B6B] leading-relaxed max-w-xl mb-9 font-normal">
-              I design and develop modern, responsive websites that make businesses look credible, communicate their value clearly, and turn more visitors into meaningful actions.
+            {/* Paragraph for tablet screens (sm+), hidden on tiny mobile for neatness */}
+            <p className="hidden sm:block text-sm sm:text-base text-neutral-300 leading-relaxed font-normal mb-5 max-w-lg text-balance">
+              I design and develop modern, responsive websites that make businesses look credible, communicate value instantly, and turn online attention into paying clients.
             </p>
 
-            {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
+            {/* Action Buttons: View Work & Let's Talk */}
+            <div className="flex flex-row items-center justify-center gap-2.5 sm:gap-3.5 w-full pt-1">
               <a
                 href="#work"
                 onClick={scrollToWork}
-                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#171717] text-[#F5F3EF] text-sm font-semibold rounded-lg hover:bg-black transition-all duration-200 shadow-[0_4px_14px_rgba(0,0,0,0.1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B88A5A] cursor-pointer"
+                className="group inline-flex items-center justify-center gap-1.5 px-4 py-2.5 sm:px-6 sm:py-3.5 bg-white text-neutral-950 text-xs sm:text-sm font-bold rounded-lg hover:bg-neutral-200 transition-all duration-200 shadow-[0_4px_20px_rgba(255,255,255,0.15)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E5A855] cursor-pointer"
               >
-                <span>View My Work</span>
-                <ArrowUpRight className="w-4 h-4 text-[#B88A5A] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+                <span>View Work</span>
+                <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#E5A855] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </a>
 
               <button
                 onClick={onOpenContact}
-                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#FFFFFF] text-[#171717] border border-[#D9D6D0] text-sm font-semibold rounded-lg hover:border-[#171717] hover:bg-[#FAF8F5] transition-all duration-200 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B88A5A] cursor-pointer"
+                className="group inline-flex items-center justify-center gap-1.5 px-4 py-2.5 sm:px-6 sm:py-3.5 bg-white/5 border border-white/20 text-white text-xs sm:text-sm font-semibold rounded-lg hover:border-white/50 hover:bg-white/10 transition-all duration-200 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E5A855] cursor-pointer"
               >
                 <span>Let's Talk</span>
-                <ArrowRight className="w-4 h-4 text-[#6B6B6B] group-hover:text-[#171717] group-hover:translate-x-1 transition-all duration-200" />
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-400 group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
               </button>
             </div>
-          </div>
 
-          {/* Right Column: Editorial Portrait with floating purposeful cards */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[380px] sm:max-w-[420px]">
-              {/* Outer decorative hairline frame */}
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-[#D9D6D0] bg-[#FFFFFF] shadow-[0_8px_30px_rgba(0,0,0,0.06)] group">
-                <img
-                  src={nazmul}
-                  alt="Nazmul - Frontend Developer and Web Consultant"
-                  className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    // Fallback to relative asset path if nazmul isn't direct
-                    const target = e.target as HTMLImageElement;
-                    if (!target.src.includes('src/assets/images')) {
-                      target.src = nazmul;
-                    }
-                  }}
-                />
-
-                {/* Subtle scrim at bottom for photo depth */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-
-                {/* Quiet badge inside the photo bottom */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs px-3 py-2 bg-black/40 backdrop-blur-md rounded-lg border border-white/10">
-                  <span className="font-medium tracking-wide">Nazmul · Web Consultant</span>
-                  <span className="text-[#B88A5A] flex items-center gap-1 font-semibold">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    Available for Work
-                  </span>
-                </div>
-              </div>
-
-              {/* Floating Card 1: Business-First Web Experience */}
-              <div className="absolute -top-4 -left-4 sm:-left-6 bg-[#FFFFFF] border border-[#D9D6D0] px-4 py-3 rounded-xl shadow-[0_8px_24px_rgba(0,0,0,0.06)] z-20 flex items-center gap-2.5 max-w-[210px] animate-in fade-in zoom-in-95 duration-500">
-                <div className="w-8 h-8 rounded-lg bg-[#F5F3EF] border border-[#D9D6D0] flex items-center justify-center shrink-0 text-[#B88A5A]">
-                  <Sparkles className="w-4 h-4" />
-                </div>
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-[#B88A5A]">Focus</p>
-                  <p className="text-xs font-semibold text-[#171717] leading-tight">Business-First Web Experience</p>
-                </div>
-              </div>
-
-              {/* Floating Card 2: Modern Frontend Stack */}
-              <div className="absolute -bottom-4 -right-3 sm:-right-6 bg-[#FFFFFF] border border-[#D9D6D0] px-4 py-3 rounded-xl shadow-[0_8px_24px_rgba(0,0,0,0.06)] z-20 max-w-[240px] animate-in fade-in zoom-in-95 duration-700">
-                <p className="text-[10px] font-bold uppercase tracking-wider text-[#6B6B6B] mb-1">Modern Stack</p>
-                <p className="text-xs font-semibold text-[#171717] tracking-tight">
-                  HTML <span className="text-[#B88A5A]">·</span> CSS <span className="text-[#B88A5A]">·</span> JS <span className="text-[#B88A5A]">·</span> React <span className="text-[#B88A5A]">·</span> Next.js
-                </p>
-              </div>
+            {/* 3 Micro-proof Points (Visible on mobile as requested) */}
+            <div className="mt-6 pt-4 border-t border-white/10 w-full flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-[11px] sm:text-xs text-neutral-400 font-medium">
+              <span className="flex items-center gap-1"><span className="text-[#E5A855]">✓</span> Sub-second loading</span>
+              <span className="flex items-center gap-1"><span className="text-[#E5A855]">✓</span> Conversion-focused UX</span>
+              <span className="flex items-center gap-1"><span className="text-[#E5A855]">✓</span> Direct collaboration</span>
             </div>
           </div>
         </div>
 
-        {/* Section 01 Bottom: Transparent Credibility Line */}
-        <div className="mt-16 sm:mt-24 pt-8 border-t border-[#D9D6D0]/80">
-          <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs sm:text-sm font-semibold tracking-wider uppercase text-[#6B6B6B] text-center">
-            <span className="text-[#171717]">Industry-Focused Niche Projects</span>
-            <span className="text-[#B88A5A]" aria-hidden="true">•</span>
-            <span className="text-[#171717]">Modern Frontend Development</span>
-            <span className="text-[#B88A5A]" aria-hidden="true">•</span>
-            <span className="text-[#171717]">Business-First Web Design</span>
+
+        {/* =========================================================================
+            DESKTOP VIEW (lg:flex):
+            Classic 2-Column Layout (Text Left, Portrait Right with new cutout image)
+            ========================================================================= */}
+        <div className="hidden lg:flex lg:flex-row lg:items-center lg:justify-between lg:gap-12 xl:gap-16">
+          
+          {/* Left Column: Text & Buttons */}
+          <div className="lg:w-[58%] xl:w-[60%] flex flex-col items-start text-left">
+            
+            {/* Position Kicker */}
+            <div className="inline-flex items-center gap-2 mb-3.5 text-xs uppercase tracking-widest font-semibold text-[#E5A855] bg-white/[0.04] px-3 py-1.5 rounded-full border border-white/10">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#E5A855]" />
+              <span>Frontend Developer & Consultant</span>
+            </div>
+
+            {/* Main Headline with Custom Radiant Gradient */}
+            <h1 className="text-5xl xl:text-6xl font-extrabold tracking-tight leading-[1.12] mb-5 text-balance">
+              <span className="bg-gradient-to-r from-white via-amber-100 to-[#E5A855] bg-clip-text text-transparent">
+                I Build Digital Experiences That Help Businesses Grow.
+              </span>
+            </h1>
+
+            {/* Paragraph Description */}
+            <div className="mb-8 max-w-xl">
+              <p className="text-base xl:text-lg text-neutral-300 leading-relaxed font-normal">
+                I design and develop modern, responsive websites that make businesses look credible, communicate value instantly, and turn online attention into paying clients.
+              </p>
+            </div>
+
+            {/* Action Buttons: View Work & Let's Talk */}
+            <div className="flex items-center gap-4 w-full">
+              <a
+                href="#work"
+                onClick={scrollToWork}
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-neutral-950 text-sm font-bold rounded-lg hover:bg-neutral-200 transition-all duration-200 shadow-[0_4px_20px_rgba(255,255,255,0.15)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E5A855] cursor-pointer"
+              >
+                <span>View Work</span>
+                <ArrowUpRight className="w-4 h-4 text-[#E5A855] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+              </a>
+
+              <button
+                onClick={onOpenContact}
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white/5 border border-white/20 text-white text-sm font-semibold rounded-lg hover:border-white/50 hover:bg-white/10 transition-all duration-200 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E5A855] cursor-pointer"
+              >
+                <span>Let's Talk</span>
+                <ArrowRight className="w-4 h-4 text-neutral-400 group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
+              </button>
+            </div>
+
+            {/* Quick Micro-Proofs */}
+            <div className="mt-8 pt-5 border-t border-white/10 w-full flex items-center gap-x-6 text-xs text-neutral-400 font-medium">
+              <div className="flex items-center gap-1.5">
+                <span className="text-[#E5A855]">✓</span>
+                <span className="text-neutral-200">Sub-second loading</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-[#E5A855]">✓</span>
+                <span className="text-neutral-200">Conversion-focused UX</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-[#E5A855]">✓</span>
+                <span className="text-neutral-200">Direct collaboration</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Nazmul's Cutout Portrait (Zero dark background, zero box/card, completely transparent) */}
+          <div className="lg:w-[42%] xl:w-[40%] flex justify-end items-end relative">
+            <div className="relative w-full max-w-[380px] xl:max-w-[430px] flex flex-col items-center">
+              
+              {/* Pristine Cutout Image - directly on the canvas without any dark background or shadow box */}
+              <div className="relative w-full flex justify-center items-end select-none overflow-hidden">
+                <img
+                  src={nazImage}
+                  alt="Nazmul Patwary - Frontend Developer and Web Consultant"
+                  className="w-full h-auto max-h-[510px] object-contain object-bottom pointer-events-auto transition-transform duration-500 hover:scale-[1.01]"
+                  loading="eager"
+                  fetchPriority="high"
+                />
+
+                {/* Subtle soft dark gradient overlay from bottom up to mid-shirt/hands (Desktop only) */}
+                <div
+                  className="absolute inset-x-0 bottom-0 h-[46%] bg-gradient-to-t from-[#0A0C10] via-[#0A0C10]/35 to-transparent pointer-events-none"
+                  aria-hidden="true"
+                />
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        {/* Bottom Credibility Strip */}
+        <div className="mt-8 sm:mt-12 lg:mt-14 pt-3 sm:pt-4 border-t border-white/10">
+          <div className="flex flex-wrap items-center justify-center gap-y-1.5 gap-x-4 sm:gap-x-6 text-[10px] sm:text-xs font-semibold tracking-wider uppercase text-neutral-400 text-center">
+            <span className="text-neutral-200">Industry-Focused Niche Solutions</span>
+            <span className="text-[#E5A855]" aria-hidden="true">•</span>
+            <span className="text-neutral-200">Modern Frontend Engineering</span>
+            <span className="text-[#E5A855]" aria-hidden="true">•</span>
+            <span className="text-neutral-200">Conversion-Driven UX</span>
           </div>
         </div>
+
       </div>
     </section>
   );

@@ -73,18 +73,18 @@ export default function CaseStudyModal({
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-black/85 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 md:p-8 animate-in fade-in duration-200">
-      <div className="relative w-full max-w-6xl bg-[#F5F3EF] border border-[#D9D6D0] rounded-2xl shadow-2xl overflow-hidden my-auto max-h-[95vh] flex flex-col">
+      <div className="relative w-full max-w-6xl bg-[#0E1017] border border-white/15 rounded-2xl shadow-2xl overflow-hidden my-auto max-h-[95vh] flex flex-col text-white">
         {/* Top Sticky Bar: Project Meta, Tabs & Close */}
-        <div className="sticky top-0 z-30 bg-[#FFFFFF] border-b border-[#D9D6D0] px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
+        <div className="sticky top-0 z-30 bg-[#131520] border-b border-white/10 px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3 min-w-0">
-            <span className="text-xs font-mono font-bold text-[#B88A5A] px-2 py-0.5 bg-[#FAF8F5] rounded border border-[#D9D6D0] shrink-0">
+            <span className="text-xs font-mono font-bold text-[#E5A855] px-2 py-0.5 bg-white/5 rounded border border-white/10 shrink-0">
               {project.number}
             </span>
             <div className="min-w-0 truncate">
-              <p className="text-[10px] font-mono uppercase tracking-wider text-[#6B6B6B] truncate">
+              <p className="text-[10px] font-mono uppercase tracking-wider text-neutral-400 truncate">
                 {project.industry} · {project.status === 'active' ? 'ACTIVE NICHE' : 'CONCEPT SPEC'}
               </p>
-              <h2 className="text-sm sm:text-base font-bold text-[#171717] tracking-tight truncate">
+              <h2 className="text-sm sm:text-base font-bold text-white tracking-tight truncate">
                 {project.name}
               </h2>
             </div>
@@ -92,13 +92,13 @@ export default function CaseStudyModal({
 
           {/* Mode Switcher & Close */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-            <div className="flex items-center p-1 bg-[#F5F3EF] rounded-lg border border-[#D9D6D0]">
+            <div className="flex items-center p-1 bg-black/40 rounded-lg border border-white/10">
               <button
                 onClick={() => setActiveTab('case-study')}
                 className={`px-2.5 sm:px-3 py-1.5 text-xs font-semibold rounded-md transition-all cursor-pointer ${
                   activeTab === 'case-study'
-                    ? 'bg-[#171717] text-[#F5F3EF] shadow-sm'
-                    : 'text-[#6B6B6B] hover:text-[#171717]'
+                    ? 'bg-white text-neutral-950 font-bold shadow-sm'
+                    : 'text-neutral-400 hover:text-white'
                 }`}
               >
                 Case Study
@@ -107,14 +107,13 @@ export default function CaseStudyModal({
                 onClick={() => setActiveTab('live-demo')}
                 className={`px-2.5 sm:px-3 py-1.5 text-xs font-semibold rounded-md transition-all cursor-pointer flex items-center gap-1.5 ${
                   activeTab === 'live-demo'
-                    ? 'bg-[#171717] text-[#F5F3EF] shadow-sm'
-                    : 'text-[#6B6B6B] hover:text-[#171717]'
+                    ? 'bg-white text-neutral-950 font-bold shadow-sm'
+                    : 'text-neutral-400 hover:text-white'
                 }`}
               >
-                <Globe className="w-3.5 h-3.5 text-[#B88A5A]" />
+                <Globe className="w-3.5 h-3.5 text-[#E5A855]" />
                 <span className="hidden sm:inline">Website Simulator</span>
                 <span className="sm:hidden">Website</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               </button>
             </div>
 
