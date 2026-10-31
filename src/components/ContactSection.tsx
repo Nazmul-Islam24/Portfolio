@@ -211,9 +211,13 @@ export default function ContactSection({ onOpenModal }: ContactSectionProps) {
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                       className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-[#1A1D2A] border border-white/10 rounded-lg text-white focus:outline-none focus:ring-1 focus:ring-[#E5A855]"
                     >
-                      <option>$500 - $1,000</option>
-                      <option>$1,000 - $3,000</option>
-                      <option>$3,000 - $5,000</option>
+                      <option>$6,00 - $8,00</option>
+                      <option>$8,00 - $1,000</option>
+                      <option>$1,000 - $1,500</option>
+                      <option>$1,500 - $2,000</option>
+                      <option>$2,000 - $3,000</option>
+                      <option>$3,000 - $4,000</option>
+                      <option>$4,000 - $5,000</option>
                       <option>$5,000+</option>
                     </select>
                   </div>
