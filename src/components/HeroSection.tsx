@@ -1,5 +1,5 @@
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
-import nazImage from '../assets/images/naz.png';
+import nazImage from '../assets/images/naz.avif';
 import HeroThreeAnimation from './HeroThreeAnimation';
 
 interface HeroSectionProps {

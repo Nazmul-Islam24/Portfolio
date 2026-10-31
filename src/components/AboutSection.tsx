@@ -1,6 +1,6 @@
 import { ArrowUpRight, MapPin, Globe, GraduationCap, Linkedin, Instagram, Facebook, Github } from 'lucide-react';
-import nazmul from '../assets/images/naz.png';
-import me from '../assets/images/naz.png';
+import nazmul from '../assets/images/naz.avif';
+import me from '../assets/images/naz.avif';
 
 interface AboutSectionProps {
   onOpenContact: () => void;
